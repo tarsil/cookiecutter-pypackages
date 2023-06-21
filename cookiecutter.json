@@ -11,6 +11,7 @@
     "description": "My awesome new python package",
     "long_description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus velit ante, venenatis at vestibulum eu, semper sit amet arcu. Duis sodales mauris diam, vel dapibus ipsum sodales vitae. Phasellus hendrerit eleifend dolor vitae mollis. In commodo ipsum ac purus condimentum facilisis. Curabitur est felis, auctor fermentum ullamcorper vel, volutpat at arcu. Ut dignissim metus a arcu fermentum, et tristique elit lacinia. Quisque sem quam, bibendum vitae viverra eget, tempus a orci.",
     "_copy_without_render": [
-        ".github/workflows/*"
+        ".github/workflows/*",
+        "docs/overrides/*"
     ]
 }
