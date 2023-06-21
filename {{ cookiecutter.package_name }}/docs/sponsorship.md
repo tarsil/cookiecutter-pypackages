@@ -1,6 +1,6 @@
 # Help {{ cookiecutter.site_name }}
 
-Do you like **{{ cookiecutter.site_name }}** and would like to help {{ cookiecutter.site_name }}, other userd and the author?
+Do you like **{{ cookiecutter.site_name }}** and would like to help {{ cookiecutter.site_name }}, other user and the author?
 
 ## 🐦 Follow {{ cookiecutter.site_name }} on Twitter
 
