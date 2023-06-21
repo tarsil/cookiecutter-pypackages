@@ -7,7 +7,7 @@ Do you like **{{ cookiecutter.site_name }}** and would like to help {{ cookiecut
 
 ## ⭐ Star **{{ cookiecutter.site_name }}** on GitHub
 
-Giving a start to {{ cookiecutter.site_name }} is very simple and helps promoting the work across the developers around the world.
+Giving a star to {{ cookiecutter.site_name }} is very simple and helps promoting the work across the developers around the world.
 
 The button is located at the top right.
 
