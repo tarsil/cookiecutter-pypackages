@@ -112,6 +112,14 @@ ignore = [
     "C901", # too complex
 ]
 
+exclude = ["docs_src/"]
+
+[tool.coverage.run]
+parallel = true
+context = '${CONTEXT}'
+source = ["tests", "{{ cookiecutter.package_name }}"]
+# omit = []
+
 [[tool.mypy.overrides]]
 module = "{{ cookiecutter.package_name }}.tests.*"
 ignore_missing_imports = true
