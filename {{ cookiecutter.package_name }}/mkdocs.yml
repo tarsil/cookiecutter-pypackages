@@ -27,12 +27,20 @@ theme:
             - search.suggest
             - search.highlight
             - content.tabs.link
+            - content.code.copy
 
 repo_name: {{ cookiecutter.repo_name }}
 repo_url: {{ cookiecutter.repo_url }}
 edit_uri: ""
 plugins:
       - search
+      - meta-descriptions:
+              export_csv: false
+              quiet: false
+              enable_checks: false
+              min_length: 50
+              max_length: 160
+              trim: false
       - markdownextradata:
               data: data
 
