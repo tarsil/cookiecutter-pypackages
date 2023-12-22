@@ -71,16 +71,10 @@ $ scripts/test
 Because {{ cookiecutter.site_name }} uses pytest, any additional arguments will be passed. More info within the
 [pytest documentation](https://docs.pytest.org/en/latest/how-to/usage.html)
 
-For example, to run a single test_script:
-
-```shell
-$ scripts/test tests/test_apiviews.py
-```
-
 To run the linting, use:
 
 ```shell
-$ scripts/format
+$ scripts/lint
 ```
 
 ### Documentation
