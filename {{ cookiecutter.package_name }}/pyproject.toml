@@ -103,11 +103,7 @@ strict_optional = false
 
 [tool.ruff]
 select = [
-    "E", # pycodestyle errors
-    "W", # pycodestyle warnings
-    "F", # pyflakes
-    "C", # flake8-comprehensions
-    "B", # flake8-bugbear
+    "E", "W", "F", "C", "B", "I", "FA", "UP",
 ]
 ignore = [
     "E501", # line too long, handled by black
@@ -116,6 +112,9 @@ ignore = [
 ]
 
 exclude = ["docs_src/"]
+
+[tool.ruff.lint.isort]
+combine-as-imports = true
 
 [tool.coverage.run]
 parallel = true
