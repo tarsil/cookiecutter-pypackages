@@ -10,7 +10,6 @@ fi
 export SOURCE_FILES="{{ cookiecutter.package_name }} tests"
 set -x
 
-${PREFIX}ruff $SOURCE_FILES --fix --line-length 99
-${PREFIX}black $SOURCE_FILES --line-length 99
-${PREFIX}isort $SOURCE_FILES --project={{ cookiecutter.package_name }} --line-length 99
 ${PREFIX}mypy {{ cookiecutter.package_name }}
+${PREFIX}ruff check $SOURCE_FILES --fix --line-length 99
+${PREFIX}black $SOURCE_FILES --line-length 99
