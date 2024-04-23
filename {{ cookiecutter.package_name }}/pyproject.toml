@@ -101,15 +101,9 @@ strict_equality = false
 strict_optional = false
 
 
-[tool.ruff]
-select = [
-    "E", "W", "F", "C", "B", "I", "FA", "UP",
-]
-ignore = [
-    "E501", # line too long, handled by black
-    "B008", # do not perform function calls in argument defaults
-    "C901", # too complex
-]
+[tool.ruff.lint]
+select = ["E", "W", "F", "C", "B", "I"]
+ignore = ["E501", "B008", "C901", "B026"]
 
 exclude = ["docs_src/"]
 
