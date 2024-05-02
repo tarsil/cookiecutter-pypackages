@@ -50,21 +50,30 @@ Changelog = "{{ cookiecutter.site_url}}/release-notes/"
 Funding = "https://github.com/sponsors/{{cookiecutter.github_username}}"
 Source = "{{ cookiecutter.repo_url}}"
 
-[project.optional-dependencies]
-test = [
-    "autoflake>=2.0.2,<3.0.0",
-    "black==24.1.1,<25.0",
-    "isort>=5.12.0,<6.0.0",
-    "mypy>=1.1.0,<2.0.0",
-    "pytest>=7.2.2,<9.0.0",
-    "pytest-cov>=4.0.0,<5.0.0",
-    "requests>=2.28.2",
+
+[tool.hatch.version]
+path = "{{ cookiecutter.package_name }}/__init__.py"
+
+[tool.hatch.envs.default]
+dependencies = [
+    "mypy==1.9.0",
     "ruff>=0.3.0,<5.0.0",
+    "pre-commit>=3.3.1,<4.0.0",
+    "devtools>=0.12.2",
+    "ipython",
+    "ptpython",
+    "twine",
 ]
 
-dev = ["ipdb>=0.13.13,<1.0.0", "pre-commit>=3.3.1,<4.0.0", "devtools>=0.12.2"]
+[tool.hatch.envs.default.scripts]
+clean_pyc = "find . -type f -name \"*.pyc\" -delete"
+clean_pyi = "find . -type f -name \"*.pyi\" -delete"
+clean_pycache = "find . -type d -name \"*__pycache__*\" -delete"
+build_with_check = "hatch build; twine check dist/*"
+lint = "ruff check --fix --line-length 99  {{ cookiecutter.package_name }} tests {args}"
 
-doc = [
+[tool.hatch.envs.docs]
+dependencies = [
     "griffe-typingdoc>=0.2.2,<1.0",
     "mkautodoc>=0.2.0,<0.3.0",
     "mkdocs>=1.1.2,<2.0.0",
@@ -76,8 +85,22 @@ doc = [
     "pyyaml>=6.0,<7.0.0",
 ]
 
-[tool.hatch.version]
-path = "{{ cookiecutter.package_name }}/__init__.py"
+[tool.hatch.envs.docs.scripts]
+build = "mkdocs build"
+serve = "mkdocs serve --dev-addr localhost:8000"
+
+[tool.hatch.envs.test]
+dependencies = [
+    "autoflake>=2.0.2,<3.0.0",
+    "black==24.1.1,<25.0",
+    "isort>=5.12.0,<6.0.0",
+    "pytest>=7.2.2,<9.0.0",
+    "pytest-cov>=4.0.0,<5.0.0",
+]
+
+[tool.hatch.envs.test.scripts]
+# needs docker services running
+check_types = "mypy -p {{ cookiecutter.package_name }}"
 
 [tool.isort]
 profile = "black"
@@ -120,10 +143,6 @@ source = ["tests", "{{ cookiecutter.package_name }}"]
 module = "{{ cookiecutter.package_name }}.tests.*"
 ignore_missing_imports = true
 check_untyped_defs = true
-
-[[tool.mypy.overrides]]
-ignore_missing_imports = true
-ignore_errors = true
 
 [[tool.mypy.overrides]]
 module = "docs_src.*"

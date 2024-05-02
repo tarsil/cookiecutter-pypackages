@@ -7,8 +7,9 @@ This cookiecutter simply makes that process less painful.
 
 ## Requirements
 
-* Python3.8+
+* Python 3.8+
 * [Cookiecutter](https://cookiecutter.readthedocs.io/en/stable/)
+* [Hatch](https://hatch.pypa.io/latest/)
 
 ### How to install
 

@@ -45,11 +45,25 @@ After, clone your fork with the follow command replacing `YOUR-USERNAME` wih you
 $ git clone https://github.com/YOUR-USERNAME/{{ cookiecutter.package_name }}
 ```
 
+{{ cookiecutter.package_name }} also uses [hatch](https://hatch.pypa.io/latest/) for its development, testing and release
+cycles.
+
+Please make sure you run:
+
+```shell
+pip install hatch
+```
+
 ### Install the project dependencies
+
+Not necessary because the dependencies are automatically installed by hatch.
+But if environments should be pre-initialized it can be done with `hatch env`
 
 ```shell
 $ cd {{ cookiecutter.package_name }}
-$ scripts/install
+$ hatch env create
+$ hatch env create test
+$ hatch env create docs
 ```
 
 ### Enable pre-commit
@@ -57,7 +71,7 @@ $ scripts/install
 The project comes with a pre-commit hook configuration. To enable it, just run inside the clone:
 
 ```shell
-$ pre-commit
+$ hatch run pre-commit install
 ```
 
 ### Run the tests
@@ -65,7 +79,7 @@ $ pre-commit
 To run the tests, use:
 
 ```shell
-$ scripts/test
+$ hatch run test:test
 ```
 
 Because {{ cookiecutter.site_name }} uses pytest, any additional arguments will be passed. More info within the
@@ -74,7 +88,7 @@ Because {{ cookiecutter.site_name }} uses pytest, any additional arguments will 
 To run the linting, use:
 
 ```shell
-$ scripts/lint
+$ hatch run lint
 ```
 
 ### Documentation
@@ -84,7 +98,7 @@ Improving the documentation is quite easy and it is placed inside the `{{ cookie
 To start the docs, run:
 
 ```shell
-$ scripts/docs
+$ hatch run docs:serve
 ```
 
 ## Building {{ cookiecutter.site_name }}
@@ -92,13 +106,13 @@ $ scripts/docs
 To build a package locally, run:
 
 ```shell
-$ scripts/build
+$ hatch build
 ```
 
 Alternatively running:
 
 ```
-$ scripts/install
+$ hatch shell
 ```
 
 It will install the requirements and create a local build in your virtual environment.
