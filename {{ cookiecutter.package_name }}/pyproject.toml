@@ -65,6 +65,15 @@ dependencies = [
     "twine",
 ]
 
+[project.optional-dependencies]
+testing = [
+    "autoflake>=2.0.2,<3.0.0",
+    "black==24.1.1,<25.0",
+    "isort>=5.12.0,<6.0.0",
+    "pytest>=7.2.2,<9.0.0",
+    "pytest-cov>=4.0.0,<5.0.0",
+]
+
 [tool.hatch.envs.default.scripts]
 clean_pyc = "find . -type f -name \"*.pyc\" -delete"
 clean_pyi = "find . -type f -name \"*.pyi\" -delete"
@@ -90,16 +99,10 @@ build = "mkdocs build"
 serve = "mkdocs serve --dev-addr localhost:8000"
 
 [tool.hatch.envs.test]
-dependencies = [
-    "autoflake>=2.0.2,<3.0.0",
-    "black==24.1.1,<25.0",
-    "isort>=5.12.0,<6.0.0",
-    "pytest>=7.2.2,<9.0.0",
-    "pytest-cov>=4.0.0,<5.0.0",
-]
+dependencies = ["{{ cookiecutter.package_name }}[testing]"]
 
 [tool.hatch.envs.test.scripts]
-# needs docker services running
+test = "pytest {args}"
 check_types = "mypy -p {{ cookiecutter.package_name }}"
 
 [tool.isort]
