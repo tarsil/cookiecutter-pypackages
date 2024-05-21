@@ -126,6 +126,8 @@ no_implicit_optional = false
 strict_equality = false
 strict_optional = false
 
+[tool.ruff]
+line-length = 120
 
 [tool.ruff.lint]
 select = ["E", "W", "F", "C", "B", "I"]
