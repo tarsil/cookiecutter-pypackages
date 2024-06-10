@@ -4,9 +4,9 @@ Thank you for showing interes in contributing to {{ cookiecutter.site_name }}. T
 project.
 
 * Try {{ cookiecutter.site_name }} and [report bugs and issues]({{ cookiecutter.repo_url }}/issues/new) you find.
-* [Implement new features]({{ cookiecutter.repo_url }}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
-* Help othes by [reviewing pull requests]({{ cookiecutter.repo_url }}/pulls)
-* Help writting documentation
+* [Implement new features]({{ cookiecutter.repo_url }}/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
+* Help othes by [reviewing pull requests]({{ cookiecutter.repo_url }}/pulls).
+* Help writting documentation.
 * Use the discussions and actively participate on them.
 * Become an contributor by helping {{ cookiecutter.site_name }} growing and spread the words across small, medium, large or any company
 size.
