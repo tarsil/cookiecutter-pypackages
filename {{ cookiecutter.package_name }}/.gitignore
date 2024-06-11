@@ -7,7 +7,6 @@
 .scannerwork/
 .tox/
 .venv/
-venv/
 .vscode/
 __pycache__/
 virtualenv/
@@ -16,17 +15,17 @@ dist/
 node_modules/
 results/
 site/
+site_lang/
 target/
 
 # files
 **/*.so
 **/*.sqlite
 *.iml
+**/*_test*
 .DS_Store
 .coverage
 .coverage.*
 .python-version
 coverage.*
 example.sqlite
-docker-compose.override.yml
-compose.override.yml
