@@ -5,7 +5,6 @@ build-backend = "hatchling.build"
 [project]
 name = "{{ cookiecutter.package_name }}"
 description = "{{ cookiecutter.description }}"
-long_description = "{{ cookiecutter.long_description }}"
 readme = "README.md"
 requires-python = ">=3.8"
 dynamic = ['version']
