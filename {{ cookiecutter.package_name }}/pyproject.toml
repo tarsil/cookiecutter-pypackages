@@ -101,7 +101,9 @@ serve = "mkdocs serve --dev-addr localhost:8000"
 dependencies = ["{{ cookiecutter.package_name }}[testing]"]
 
 [tool.hatch.envs.test.scripts]
-test = "pytest {args}"
+# needs docker services running
+test = "hatch test -- {args}"
+test_man = "hatch test -- {args} -s -vv"
 check_types = "mypy -p {{ cookiecutter.package_name }}"
 
 [tool.isort]
