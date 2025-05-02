@@ -41,8 +41,6 @@ plugins:
       min_length: 50
       max_length: 160
       trim: false
-  - markdownextradata:
-      data: data
 
 nav:
   - Introduction: "index.md"
