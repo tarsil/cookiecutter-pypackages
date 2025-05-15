@@ -6,7 +6,7 @@ build-backend = "hatchling.build"
 name = "{{ cookiecutter.package_name }}"
 description = "{{ cookiecutter.description }}"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 dynamic = ['version']
 license = "MIT"
 authors = [
@@ -53,6 +53,7 @@ Source = "{{ cookiecutter.repo_url}}"
 path = "{{ cookiecutter.package_name }}/__init__.py"
 
 [tool.hatch.envs.default]
+installer = "uv"
 dependencies = [
     "mypy==1.9.0",
     "ruff>=0.3.0,<5.0.0",
