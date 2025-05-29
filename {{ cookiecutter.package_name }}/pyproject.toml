@@ -53,7 +53,6 @@ Source = "{{ cookiecutter.repo_url}}"
 path = "{{ cookiecutter.package_name }}/__init__.py"
 
 [tool.hatch.envs.default]
-installer = "uv"
 dependencies = [
     "mypy==1.9.0",
     "ruff>=0.3.0,<5.0.0",
