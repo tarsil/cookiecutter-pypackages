@@ -1,0 +1,37 @@
+# folders
+*.egg-info/
+.hypothesis/
+.idea/
+.mypy_cache/
+.pytest_cache/
+.scannerwork/
+.tox/
+.venv/
+venv/
+.vscode/
+__pycache__/
+virtualenv/
+build/
+dist/
+node_modules/
+results/
+site/
+site_build/
+site_lang/
+target/
+tests/cli/myproject
+tests/cli/simple/myproject
+
+# files
+**/*.so
+**/*.sqlite
+*.iml
+*.zip
+.DS_Store
+.coverage
+.coverage.*
+.python-version
+coverage.*
+example.sqlite
+docker-compose.override.yml
+compose.override.yml

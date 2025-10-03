@@ -93,14 +93,18 @@ dependencies = [
 ]
 
 [tool.hatch.envs.docs.scripts]
-build = "mkdocs build"
-serve = "mkdocs serve --dev-addr localhost:8000"
+update_languages = "scripts/docs.py update-languages"
+build = "hatch run docs:update_languages; scripts/docs.py build-all"
+build_lang = "hatch run docs:update_languages; scripts/docs.py build --lang {args}"
+serve = "hatch run docs:update_languages; scripts/docs.py live"
+dev = "hatch run docs:update_languages; scripts/docs.py serve"
+serve_lang = "hatch run docs:update_languages; scripts/docs.py live --lang {args}"
+new_lang = "hatch run docs:update_languages; scripts/docs.py new-lang --lang {args}"
 
 [tool.hatch.envs.test]
 features = "testing"
 
 [tool.hatch.envs.test.scripts]
-# needs docker services running
 test = "hatch test -- {args}"
 test_man = "hatch test -- {args} -s -vv"
 check_types = "mypy -p {{ cookiecutter.package_name }}"
