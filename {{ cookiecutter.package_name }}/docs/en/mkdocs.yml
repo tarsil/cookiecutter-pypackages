@@ -4,7 +4,6 @@ site_url: {{ cookiecutter.site_url }}
 
 theme:
   name: "material"
-  custom_dir: ../en/overrides
   language: en
   palette:
     - scheme: "default"
