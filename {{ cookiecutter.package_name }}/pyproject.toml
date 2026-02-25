@@ -55,7 +55,7 @@ path = "{{ cookiecutter.package_name }}/__init__.py"
 
 [tool.hatch.envs.default]
 dependencies = [
-    "mypy==1.9.0",
+    "ty",
     "ruff>=0.3.0,<5.0.0",
     "pre-commit>=3.3.1,<4.0.0",
     "devtools>=0.12.2",
@@ -108,28 +108,23 @@ features = ["testing"]
 [tool.hatch.envs.test.scripts]
 test = "hatch test -- {args}"
 test_man = "hatch test -- {args} -s -vv"
-check_types = "mypy -p {{ cookiecutter.package_name }}"
+check_types = "ty check {{ cookiecutter.package_name }}"
 
 [tool.isort]
 profile = "black"
 known_third_party = []
 src_paths = ["{{ cookiecutter.package_name }}"]
 
-[tool.mypy]
-strict = true
-warn_unused_configs = true
-warn_unreachable = true
-warn_return_any = true
-disallow_untyped_decorators = true
-disallow_any_generics = false
-implicit_reexport = false
-show_error_codes = true
-disallow_incomplete_defs = true
-warn_unused_ignores = true
-warn_redundant_casts = true
-no_implicit_optional = false
-strict_equality = false
-strict_optional = false
+
+[tool.isort]
+profile = "black"
+known_third_party = []
+src_paths = ["asyncmq"]
+
+[tool.ty]
+
+[tool.ty.environment]
+python-version = "3.10"
 
 [tool.ruff]
 line-length = 120
@@ -148,15 +143,6 @@ parallel = true
 context = '${CONTEXT}'
 source = ["tests", "{{ cookiecutter.package_name }}"]
 # omit = []
-
-[[tool.mypy.overrides]]
-module = "{{ cookiecutter.package_name }}.tests.*"
-ignore_missing_imports = true
-check_untyped_defs = true
-
-[[tool.mypy.overrides]]
-module = "docs_src.*"
-ignore_errors = true
 
 [tool.pytest.ini_options]
 addopts = ["--strict-config", "--strict-markers"]
