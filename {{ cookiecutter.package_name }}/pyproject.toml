@@ -115,12 +115,6 @@ profile = "black"
 known_third_party = []
 src_paths = ["{{ cookiecutter.package_name }}"]
 
-
-[tool.isort]
-profile = "black"
-known_third_party = []
-src_paths = ["asyncmq"]
-
 [tool.ty]
 
 [tool.ty.environment]
